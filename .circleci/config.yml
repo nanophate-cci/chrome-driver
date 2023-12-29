@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - browser-tools/install-chrome:
-          chrome-version: 119.0.6045.214 
+          chrome-version: 120.0.6099.71-1
       - browser-tools/install-chromedriver
       - run:
           command: |
