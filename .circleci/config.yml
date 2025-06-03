@@ -1,15 +1,15 @@
 
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.4.6
+  browser-tools: circleci/browser-tools@2.0.0
 jobs:
   build:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/base:current
+    parallelism: 30
     steps:
       - checkout
-      - browser-tools/install-chrome:
-          chrome-version: 120.0.6099.71
+      - browser-tools/install-chrome
       - browser-tools/install-chromedriver
       - run:
           command: |
