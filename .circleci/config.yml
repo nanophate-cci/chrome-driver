@@ -11,14 +11,14 @@ jobs:
     resource_class: medium
     steps:
       - checkout
-      #- run:
-      #    command: |
-      #        # Need sudo to modify system files
-      #        sudo sed -i 's|http://archive.ubuntu.com|http://us-east-1.ec2.archive.ubuntu.com|g' /etc/apt/sources.list
-      #        sudo sed -i 's|http://security.ubuntu.com|http://us-east-1.ec2.archive.ubuntu.com|g' /etc/apt/sources.list
-      #        # Update package lists with new sources
-      #        sudo apt-get update
-      #    name: update ubuntu package
+      - run:
+          command: |
+              # Need sudo to modify system files
+              # sudo sed -i 's|http://archive.ubuntu.com|http://us-east-1.ec2.archive.ubuntu.com|g' /etc/apt/sources.list
+              # sudo sed -i 's|http://security.ubuntu.com|http://us-east-1.ec2.archive.ubuntu.com|g' /etc/apt/sources.list
+              # Update package lists with new sources
+              sudo apt-get update
+          name: update ubuntu package
       - browser-tools/install_chrome
       - browser-tools/install_chromedriver
       - run:
