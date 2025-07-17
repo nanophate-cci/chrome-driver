@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       - image: cimg/base:current
-    parallelism: 30
+    parallelism: 300
     resource_class: medium
     steps:
       - checkout
