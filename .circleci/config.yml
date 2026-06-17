@@ -5,10 +5,14 @@ orbs:
 
 jobs:
   build:
-    docker:
-      - image: cimg/base:current
+#    docker:
+#      - image: cimg/base:current
+#    resource_class: small
+
+    machine:
+      image: ubuntu-2604:current
+    resource_class: large.gen3
     parallelism: 15
-    resource_class: small
     steps:
       - checkout
       - run:
